@@ -4,7 +4,8 @@ class Solution:
         for i in range(len(nums)):
             mp[nums[i]]=i
         for i in range(len(nums)):
-            if mp.get(target-nums[i]) and  mp.get(target-nums[i])!=i:
+            if mp.get(target-nums[i]) and mp.get(target-nums[i])!=i:
                 return [mp.get(target-nums[i]),i]
-        return [-1,-1]           
+        return [-1,-1]            
+
         
