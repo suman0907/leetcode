@@ -12,5 +12,4 @@ class Solution:
             if i>=k-1:
                 result.append(nums[d[0]])
         return result                
-
         
