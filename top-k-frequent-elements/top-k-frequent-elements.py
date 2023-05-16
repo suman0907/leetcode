@@ -1,5 +1,4 @@
 from collections import Counter
-import heapq
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         count = Counter(nums)
@@ -8,6 +7,5 @@ class Solution:
         res = [heapq.heappop(arr)[1] for _ in range(k)]
         return res
 
-        
 
         
