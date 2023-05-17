@@ -2,19 +2,20 @@ from collections import OrderedDict
 class LRUCache:
 
     def __init__(self, capacity: int):
-        self.capacity = capacity
         self.mp = OrderedDict()
+        self.capacity = capacity
         
 
     def get(self, key: int) -> int:
-        if key not in self.mp:
-            return -1
-        else:
-            val  = self.mp[key]
+        if key in self.mp:
+            val = self.mp[key]
             del self.mp[key]
-            self.mp[key] = val
-            return self.mp[key]    
-        
+            self.mp[key]=val
+            return self.mp[key]
+        else:
+            return -1    
+
+
 
     def put(self, key: int, value: int) -> None:
         if key in self.mp:
@@ -25,9 +26,7 @@ class LRUCache:
                 self.mp[key]=value
             else:
                 self.mp.popitem(last=False)
-                self.mp[key]=value
-
-
+                self.mp[key]=value        
         
 
 
