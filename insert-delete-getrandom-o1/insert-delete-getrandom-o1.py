@@ -7,24 +7,21 @@ class RandomizedSet:
 
     def insert(self, val: int) -> bool:
         if val not in self.mp:
-            self.mp[val]= len(self.arr)
+            self.mp[val] = len(self.arr)
             self.arr.append(val)
             return True
         else:
-            return False    
-
-        
+            return False         
 
     def remove(self, val: int) -> bool:
         if val in self.mp:
-            last_val = self.arr[-1]
             index = self.mp[val]
-            self.arr[index]=last_val
-            self.mp[last_val]= index
-            self.arr[-1]=val
+            last_ele = self.arr[-1]
+            self.mp[last_ele]=index
+            self.arr[index]=last_ele
+            self.arr[-1]= val
             del self.mp[val]
             self.arr.pop()
-
             return True
         else:
             return False    
