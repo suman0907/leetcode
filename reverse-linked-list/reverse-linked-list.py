@@ -11,7 +11,8 @@ class Solution:
         while curr:
             next_p = curr.next
             curr.next = prev
-            prev= curr
-            curr= next_p
+            prev =curr
+            curr = next_p
         return prev    
+
         
