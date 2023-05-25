@@ -1,14 +1,15 @@
 class Solution:
     def isAlienSorted(self, words: List[str], order: str) -> bool:
         mp = {}
-        for i , k in enumerate(order):
-            mp[k]=i
-        
-        prev = list(mp[i] for i in words[0])  
-        for i in range(1, len(words)):
-            curr = list(mp[j] for j in words[i])
-            print(curr,prev)
-            if curr<prev:
+        for i,v in enumerate(order):
+            mp[v]=i
+        prev = [mp[i] for i in words[0]] 
+        for i in range(1,len(words)):
+            curr = [mp[i] for i in words[i]] 
+            if prev>curr:
                 return False
             prev = curr
-        return True         
+        return True          
+
+
+        
