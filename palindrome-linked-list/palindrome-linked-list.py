@@ -8,8 +8,8 @@ class Solution:
         slow = head
         fast = head
         while fast and fast.next:
-            slow =  slow.next
-            fast = fast.next.next
+            slow= slow.next
+            fast= fast.next.next
         curr = slow
         next_p = slow
         prev = None
@@ -17,18 +17,14 @@ class Solution:
             next_p = curr.next
             curr.next = prev
             prev = curr
-            curr = next_p
-
-        head1 = prev
-        head2 = head
-        while head1 and head2:
-            if head1.val!=head2.val:
+            curr= next_p
+        l1 = prev
+        l2= head
+        while l1 and l2:
+            if l1.val!=l2.val:
                 return False
-            head1= head1.next
-            head2= head2.next
-        
-        return True            
-
-
+            l1= l1.next
+            l2= l2.next    
+        return True        
 
         
