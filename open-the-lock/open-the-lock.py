@@ -2,7 +2,6 @@ class Solution:
     def openLock(self, deadends: List[str], target: str) -> int:
         if "0000" in deadends:
             return -1
-
         def children(lock):
             res = []
             for i in range(4):
@@ -10,19 +9,20 @@ class Solution:
                 sub_s = lock[:i]+str(((int(lock[i])-1)+10)%10)+lock[i+1:]
                 res.append(add_s)
                 res.append(sub_s)
-            return res    
-                
+            return res   
 
-
-        q = [["0000",0]]
+        qu = [["0000",0]] # move and turns
         vis = set(deadends)
-        while q:
-            lock, turn = q.pop(0)
+        while qu:
+            front = qu.pop(0)
+            lock = front[0]
+            turn = front[1]
             if lock==target:
                 return turn
             for child in children(lock):
                 if child not in vis:
-                    q.append([child,turn+1])
-                    vis.add(child) 
-        return -1               
+                    vis.add(child)
+                    qu.append([child,turn+1])
+        return -1            
 
+        
