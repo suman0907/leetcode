@@ -18,11 +18,10 @@ class Solution:
                         qu.append(front.left)
                     if front.right:
                         qu.append(front.right)
-                result.append(curr_list[-1])            
-
-
+                result.append(curr_list[-1])
         if root:
             bfs(root)
             return result
         else:
-            []    
+            return []                        
+        
