@@ -4,14 +4,9 @@ class Solution:
         prices[src]=0
         for i in range(k+1):
             tempPrices = prices.copy()
-            for s, d, p in flights:
+            for s,d,p in flights:
                 if prices[s]+p<tempPrices[d]:
-                    tempPrices[d] = prices[s]+p
+                    tempPrices[d]=prices[s]+p
             prices = tempPrices
-        return -1 if prices[dst]==float("inf") else prices[dst]          
-                
-
-
-
-
+        return -1 if prices[dst]==float("inf") else prices[dst]            
         
