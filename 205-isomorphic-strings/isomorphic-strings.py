@@ -2,7 +2,7 @@ class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         if len(s)!=len(t):
             return False
-        mp1 ={}
+        mp1 = {}
         mp2 = {}
         for i in range(len(s)):
             x = s[i]
