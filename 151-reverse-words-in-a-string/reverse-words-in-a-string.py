@@ -1,12 +1,12 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        s= s.strip(" ") 
-        arrs = s.split()
+        s = s.strip(" ")
+        arr = s.split()
         i = 0
-        j = len(arrs)-1
+        j = len(arr)-1
         while i<j:
-            arrs[i],arrs[j]=arrs[j],arrs[i]
-            i+=1
-            j-=1
-        return " ".join(arrs)
+            arr[i],arr[j]=arr[j],arr[i]
+            i +=1
+            j -=1
+        return " ".join(arr)   
         
