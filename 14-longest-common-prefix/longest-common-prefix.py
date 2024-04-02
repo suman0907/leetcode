@@ -4,8 +4,9 @@ class Solution:
         res = ""
         for i in range(len(s)):
             for j in strs:
-                if i==len(j) or s[i]!=j[i]:
+                if len(j)<=i or s[i]!=j[i]:
                     return res
-            res +=s[i]  
-        return res          
+            res +=s[i] 
+        return res           
+                
         
