@@ -1,11 +1,9 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        for i in range(len(haystack)-len(needle)+1):
+        for i in range(len(haystack)):
             if haystack[i]==needle[0]:
-                cs = haystack[i:i+len(needle)]
-                print(cs)
-                if cs==needle:
+                temp_s = haystack[i:i+len(needle)]
+                if temp_s==needle:
                     return i
         return -1            
-
         
