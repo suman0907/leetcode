@@ -10,12 +10,10 @@ class Solution:
         while curr:
             if curr.val!=val:
                 ptr.next = curr
-                ptr = ptr.next 
+                ptr = ptr.next
                 curr = curr.next
                 ptr.next = None
-            else:    
+            else:
                 curr = curr.next
-        return dummy.next    
-
-        
+        return dummy.next           
         
