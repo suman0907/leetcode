@@ -3,21 +3,22 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        if len(nums)==k:
+            return nums
         if k>len(nums):
-            k=k%len(nums)
-        nums.reverse() 
+            k = k%len(nums)
+        nums.reverse()
         i = 0
-        j = k-1
+        j= k-1
         while i<j:
-            nums[i],nums[j]=nums[j],nums[i]
+            nums[i],nums[j]= nums[j],nums[i]
             i+=1
             j-=1
         i= k
         j= len(nums)-1
         while i<j:
-            nums[i],nums[j]=nums[j],nums[i]
+            nums[i],nums[j]= nums[j],nums[i]
             i+=1
             j-=1
-
 
         
