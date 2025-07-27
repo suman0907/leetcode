@@ -8,4 +8,5 @@ class Solution:
                 nums[j]=nums[i]
             i+=1
         return j+1        
+              
         
